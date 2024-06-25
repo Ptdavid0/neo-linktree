@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 
-export function Background() {
+export function Background({ children }: PropsWithChildren) {
   const [lavaBalls, setLavaBalls] = useState({
     circle1: { x: 400, y: 200, xSpeed: 0.2, ySpeed: 0.34 },
     circle2: { x: 600, y: 400, xSpeed: -0.5, ySpeed: 0.5 },
@@ -53,7 +53,8 @@ export function Background() {
   }, []);
 
   return (
-    <div id="app" className="fixed inset-0 overflow-hidden bg-black">
+    <main className="fixed inset-0 overflow-hidden bg-black flex justify-center items-center">
+      {children}
       <div className="metaballs fixed inset-0 -z-10 overflow-hidden">
         <svg className="metasvg fixed h-[110vh] w-[110vw] top-[-20px] left-[-20px] overflow-hidden">
           <defs>
@@ -119,6 +120,6 @@ export function Background() {
           </g>
         </svg>
       </div>
-    </div>
+    </main>
   );
 }
