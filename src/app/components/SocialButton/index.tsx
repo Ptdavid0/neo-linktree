@@ -13,7 +13,8 @@ export default function SocialButton({ account }: SocialButtonProps) {
       <a
         href={account.link}
         target="_blank"
-        className="rounded-md bg-white px-10 py-6 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        rel="noopener noreferrer"
+        className="rounded-md bg-transparent w-full text-sm py-4 text-center font-semibold text-white shadow-sm border hover:bg-gray-300 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
         {account.title}
       </a>

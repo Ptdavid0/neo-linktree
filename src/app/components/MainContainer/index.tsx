@@ -6,7 +6,6 @@ import Logo from "../../../../public/logo.png";
 import SocialButton from "../SocialButton";
 
 export default function MainContainer() {
-  const [displayLinks, setDisplayLinks] = useState(true);
   const socialMedia = [
     {
       title: "Threads",
@@ -19,6 +18,18 @@ export default function MainContainer() {
     {
       title: "Instagram",
       link: "https://www.instagram.com/neo.coders/",
+    },
+    {
+      title: "LinkedIn Ana",
+      link: "https://www.linkedin.com/in/anabmagalhaes/",
+    },
+    {
+      title: "LinkedIn Ana",
+      link: "https://www.linkedin.com/in/pedro-antonio-david-914aa1129/",
+    },
+    {
+      title: "Rocketseat",
+      link: "https://app.rocketseat.com.br/cart/rocketseat-one?referral=anacbortolini&utm_source=platform&utm_medium=organic&utm_campaign=venda&utm_term=mgm&utm_content=indication-lp_one",
     },
   ];
 
@@ -44,6 +55,7 @@ export default function MainContainer() {
             </radialGradient>
           </defs>
         </svg>
+
         <div className="mx-auto max-w-md text-left lg:mx-0 lg:flex-auto lg:py-32 lg:text-left">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Empowering Minds. Transforming Careers.
@@ -56,19 +68,18 @@ export default function MainContainer() {
             for your success in this dynamic world.
           </p>
           <button
-            onClick={() => setDisplayLinks(!displayLinks)}
+            onClick={() => {}}
             className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:mb-8 lg:mb-0"
           >
             Get started
           </button>
         </div>
-        {displayLinks && (
-          <div className="mx-auto max-w-md  lg:mx-0 lg:flex-auto lg:py-32 text-left grid grid-row-1 sm:grid-rows-2 lg:grid-rows-3 gap-4">
-            {socialMedia.map((account) => (
-              <SocialButton account={account} key={account.link} />
-            ))}
-          </div>
-        )}
+
+        <div className="mt-8 grid gap-x-4 gap-y-4 lg:py-16 lg:min-w-80 sm:grid-cols-2 sm:mb-10 lg:grid-cols-1">
+          {socialMedia.map((account) => (
+            <SocialButton account={account} key={account.link} />
+          ))}
+        </div>
       </div>
     </div>
   );
