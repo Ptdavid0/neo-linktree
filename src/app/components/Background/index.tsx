@@ -3,38 +3,55 @@
 import React, { PropsWithChildren, useEffect, useState } from "react";
 
 export function Background({ children }: PropsWithChildren) {
+  const [bounds, setBounds] = useState({
+    minX: -150,
+    minY: -150,
+    maxX: 0,
+    maxY: 0,
+  });
+
   const [lavaBalls, setLavaBalls] = useState({
     circle1: { x: 400, y: 200, xSpeed: 0.2, ySpeed: 0.34 },
     circle2: { x: 600, y: 400, xSpeed: -0.5, ySpeed: 0.5 },
     circle3: { x: 800, y: 600, xSpeed: 0.3, ySpeed: 0.6 },
     circle4: { x: 1000, y: 500, xSpeed: -0.1, ySpeed: 0.6 },
     circle5: { x: 900, y: 300, xSpeed: -0.2, ySpeed: 0.3 },
-    bounds: {
-      minX: -150,
-      minY: -150,
-      maxX: window.innerWidth + 100,
-      maxY: window.innerHeight + 100,
-    },
   });
 
   const updateCirclePosition = (circle: any) => {
     circle.x += circle.xSpeed;
     circle.y += circle.ySpeed;
-    if (circle.x < lavaBalls.bounds.minX) {
-      circle.x = lavaBalls.bounds.minX + Math.random() * 10;
+    if (circle.x < bounds.minX) {
+      circle.x = bounds.minX + Math.random() * 10;
       circle.xSpeed = Math.abs(circle.xSpeed);
-    } else if (circle.x > lavaBalls.bounds.maxX) {
-      circle.x = lavaBalls.bounds.maxX - Math.random() * 10;
+    } else if (circle.x > bounds.maxX) {
+      circle.x = bounds.maxX - Math.random() * 10;
       circle.xSpeed = -Math.abs(circle.xSpeed);
     }
-    if (circle.y < lavaBalls.bounds.minY) {
-      circle.y = lavaBalls.bounds.minY + Math.random() * 10;
+    if (circle.y < bounds.minY) {
+      circle.y = bounds.minY + Math.random() * 10;
       circle.ySpeed = Math.abs(circle.ySpeed);
-    } else if (circle.y > lavaBalls.bounds.maxY) {
-      circle.y = lavaBalls.bounds.maxY - Math.random() * 10;
+    } else if (circle.y > bounds.maxY) {
+      circle.y = bounds.maxY - Math.random() * 10;
       circle.ySpeed = -Math.abs(circle.ySpeed);
     }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setBounds({
+        minX: -150,
+        minY: -150,
+        maxX: window.innerWidth + 100,
+        maxY: window.innerHeight + 100,
+      });
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -50,7 +67,7 @@ export function Background({ children }: PropsWithChildren) {
     }, 10);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [bounds]);
 
   return (
     <main className="fixed inset-0 overflow-hidden bg-black flex justify-center items-center">
