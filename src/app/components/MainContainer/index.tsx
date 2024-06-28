@@ -1,8 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
-import Logo from "../../../../public/logo.png";
+import React from "react";
 import SocialButton from "../SocialButton";
 
 export default function MainContainer() {
@@ -12,7 +10,7 @@ export default function MainContainer() {
       link: "https://www.threads.net/@neo.coders?igshid=MzRlODBiNWFlZA==",
     },
     {
-      title: "LinkedIn",
+      title: "LinkedIn - Neo Coders",
       link: "https://www.linkedin.com/company/neo-coders/",
     },
     {
@@ -20,11 +18,11 @@ export default function MainContainer() {
       link: "https://www.instagram.com/neo.coders/",
     },
     {
-      title: "LinkedIn Ana",
+      title: "LinkedIn - Ana",
       link: "https://www.linkedin.com/in/anabmagalhaes/",
     },
     {
-      title: "LinkedIn Ana",
+      title: "LinkedIn - Pedro",
       link: "https://www.linkedin.com/in/pedro-antonio-david-914aa1129/",
     },
     {
@@ -34,8 +32,8 @@ export default function MainContainer() {
   ];
 
   return (
-    <div className="mx-auto max-w-7xl py-24 sm:px-6 sm:py-32 lg:px-8 sm:m-5">
-      <div className="relative isolate overflow-hidden bg-gray-900 px-6 pt-16 shadow-2xl rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 bg-opacity-100">
+    <div className="mx-auto py-24 sm:px-6 sm:py-32 lg:px-8 sm:m-5 lg:max-w-7xl ">
+      <div className="relative isolate overflow-hidden px-6 pt-16 shadow-2xl rounded-3xl sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 bg-purple-400 backdrop-filter backdrop-blur-sm bg-opacity-10 border ">
         <svg
           viewBox="0 0 1024 1024"
           className="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
@@ -67,12 +65,13 @@ export default function MainContainer() {
             Our mission is to ignite curiosity, inspire growth, and pave the way
             for your success in this dynamic world.
           </p>
-          <button
+          {/* Habilitate this Get Started button after blog is completed */}
+          {/* <button
             onClick={() => {}}
             className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white sm:mb-8 lg:mb-0"
           >
             Get started
-          </button>
+          </button> */}
         </div>
 
         <div className="mt-8 grid gap-x-4 gap-y-4 lg:py-16 lg:min-w-80 sm:grid-cols-2 sm:mb-10 lg:grid-cols-1">
