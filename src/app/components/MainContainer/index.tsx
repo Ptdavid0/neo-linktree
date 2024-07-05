@@ -32,7 +32,7 @@ export default function MainContainer() {
   ];
 
   return (
-    <div className="w-full h-full sm:w-auto sm:h-auto sm:px-6 sm:py-32 lg:px-8 sm:m-5 lg:max-w-7xl flex overflow-scroll">
+    <div className="w-full h-full sm:w-auto sm:h-auto sm:px-6 sm:py-32 lg:px-8 sm:m-5 lg:max-w-7xl flex overflow-hidden">
       <div className="relative isolate overflow-hidden px-6 pt-16 shadow-2xl sm:rounded-3xl sm:border sm:px-16 md:pt-24 lg:flex lg:gap-x-20 lg:px-24 lg:pt-0 bg-purple-400 backdrop-filter backdrop-blur-sm bg-opacity-10">
         <svg
           viewBox="0 0 1024 1024"
